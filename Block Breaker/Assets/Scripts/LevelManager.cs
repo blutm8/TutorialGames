@@ -8,6 +8,7 @@ public class LevelManager : MonoBehaviour
     public void LoadLevel (string name)
     {
         SceneManager.LoadScene(name);
+        Brick.breakableCount = 0;
     }
 
     public void QuitGame ()
@@ -24,6 +25,7 @@ public class LevelManager : MonoBehaviour
         if (Brick.breakableCount <= 0)
         {
             LoadNextLevel();
+            Brick.breakableCount = 0;
         }
     }
 }
