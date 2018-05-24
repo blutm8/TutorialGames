@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 50019586026915298}
   - component: {fileID: 60139481996791938}
   - component: {fileID: 114171787318304334}
-  m_Layer: 0
+  - component: {fileID: 95978791633907810}
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1413618042556796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.682454, y: -1.5855582, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -118,6 +119,23 @@ PolygonCollider2D:
       - {x: -0.12058067, y: -0.17445147}
       - {x: 0.11771822, y: -0.17907763}
       - {x: 0.145, y: -0.16}
+--- !u!95 &95978791633907810
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1413618042556796}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a94dc582c4ef934d839f79f78ba69c7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114171787318304334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,6 +150,7 @@ MonoBehaviour:
   projectile: {fileID: 1098700498604386, guid: d7b0b2720cba39d43ae63b89d619c36f, type: 2}
   projectileSpeed: 10
   health: 150
+  shotsPerSeconds: 0.5
 --- !u!212 &212607952854755468
 SpriteRenderer:
   m_ObjectHideFlags: 1

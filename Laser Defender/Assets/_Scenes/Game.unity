@@ -453,6 +453,7 @@ MonoBehaviour:
   width: 10
   height: 5
   speed: 10
+  spawnDelay: 0.5
 --- !u!1001 &1253044965
 Prefab:
   m_ObjectHideFlags: 0
@@ -490,11 +491,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4627975537005914, guid: 7ed688b7145f4ce49b4aca0c56c2107b, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 60627573324433410, guid: 7ed688b7145f4ce49b4aca0c56c2107b,
-        type: 2}
-      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

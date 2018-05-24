@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
     public float width = 10f;
     public float height = 5f;
     public float speed = 15.0f;
+    public float spawnDelay = 0.5f;
 
     float xmin;
     float xmax;
@@ -25,10 +26,29 @@ public class EnemySpawner : MonoBehaviour
         xmin = leftmost.x;
         xmax = rightmost.x;
 
-        foreach (Transform child in transform)
+        SpawnUntilFull();
+    }
+
+    //void SpawnEnemies()
+    //{
+    //    foreach (Transform child in transform)
+    //    {
+    //        GameObject enemy = Instantiate(enemyPrefab, child.transform.position, Quaternion.identity) as GameObject;
+    //        enemy.transform.parent = child;
+    //    }
+    //}
+
+    void SpawnUntilFull()
+    {
+        Transform freePosition = NextFreePosition();
+        if (freePosition)
         {
-            GameObject enemy = Instantiate(enemyPrefab, child.transform.position, Quaternion.identity) as GameObject;
-            enemy.transform.parent = child;
+            GameObject enemy = Instantiate(enemyPrefab, freePosition.position, Quaternion.identity) as GameObject;
+            enemy.transform.parent = freePosition;
+        }
+        if (NextFreePosition())
+        {
+            Invoke("SpawnUntilFull", spawnDelay);
         }
     }
 
@@ -60,5 +80,35 @@ public class EnemySpawner : MonoBehaviour
         {
             movingRight = false;
         }
+
+        if(AllMembersDead())
+        {
+            Debug.Log("Empty Formation");
+            SpawnUntilFull();
+        }
+    }
+
+    Transform NextFreePosition()
+    {
+        foreach (Transform childPositionGameObject in transform)
+        {
+            if (childPositionGameObject.childCount == 0)
+            {
+                return childPositionGameObject;
+            }
+        }
+        return null;
+    }
+
+    bool AllMembersDead()
+    {
+        foreach (Transform childPositionGameObject in transform)
+        {
+            if (childPositionGameObject.childCount > 0)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
