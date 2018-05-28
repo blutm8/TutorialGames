@@ -325,6 +325,7 @@
     <Compile Include="Assets\Scripts\General\LevelManager.cs" />
     <Compile Include="Assets\Scripts\General\MusicPlayer.cs" />
     <Compile Include="Assets\Scripts\General\Projectile.cs" />
+    <Compile Include="Assets\Scripts\General\ScoreKeeper.cs" />
     <Compile Include="Assets\Scripts\General\Shredder.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
   </ItemGroup>
