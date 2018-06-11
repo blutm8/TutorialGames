@@ -13,4 +13,9 @@ public class LevelManager : MonoBehaviour
     {
 		Application.Quit ();
 	}
+
+    public void OpenUrl(string link)
+    {
+        Application.OpenURL(link);
+    }
 }
